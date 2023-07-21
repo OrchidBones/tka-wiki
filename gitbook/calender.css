@@ -14,7 +14,7 @@ span.birthday-highlight{
     margin-right: 3px;
 }
 
-span.birthday-mark{
-    color: rgb(255, 193, 68);
-    font-size: 10px;
+.zabuto-calendar__day--today .birthday-highlight{
+    text-decoration: underline 3px rgb(0, 222, 107);
+    margin-right: 3px;
 }

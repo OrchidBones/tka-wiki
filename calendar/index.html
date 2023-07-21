@@ -13,6 +13,8 @@
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
     
             
                 
@@ -1407,8 +1409,18 @@
                                 
                                 <h1 id="※-角色生日日历">※ 角色生日日历</h1>
 <blockquote>
-<p>注：仅本年带有生日标记。</p>
+<p>注1：如果没有看到日历，请手动刷新一下本页面。</p>
 </blockquote>
+
+<blockquote>
+<p>注2：仅本年带有生日标记。</p>
+</blockquote>
+
+<p><span style="text-decoration: underline 3px rgb(255, 193, 68);">黄底线</span>：有人过生日（点击日期即可查看详细信息）</p>
+
+<p><span style="text-decoration: underline 3px rgb(32, 184, 255);">蓝底线</span>：今天</p>
+
+<p><span style="text-decoration: underline 3px rgb(0, 222, 107);">绿底线</span>：今天有人要过生日（点击日期即可查看详细信息）</p>
 
 <p id="clndr"></p>
 
@@ -1534,7 +1546,6 @@
         
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="../gitbook/zabuto_calendar.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
 <link rel="stylesheet" href="../gitbook/zabuto_calendar.min.css">
 <link rel="stylesheet" href="../gitbook/calender.css">
 <script>
@@ -1549,7 +1560,7 @@
         birthdayDates_full.push(''+thisYear+'-'+d);
     });
     var targetEvents = [];
-    var markupText = '<span class="birthday-highlight">[day]</span><span class="birthday-mark"><i class="fa fa-birthday-cake"></i></span>';
+    var markupText = '<span class="birthday-highlight">[day]</span>';
     birthdayDates_full.forEach((d)=>{
         targetEvents.push({
             date: d,
@@ -1573,6 +1584,7 @@
 
         $('#clndr').on('zabuto:calendar:day', function (e) {
             var now = new Date();
+            var curYear = ''+(e.date.getFullYear());
             var curMonth = ''+(e.date.getMonth() + 1);
             var curDay = ''+(e.date.getDate());
             if(curMonth < 10) curMonth = '0' + curMonth;
@@ -1592,7 +1604,7 @@
                 alertText += prefix + '今天';
             }
             if(alertText) {
-                window.alert(alertText);
+                window.alert(curYear + '-' + curDateStr + '\n' + alertText);
             }
         });
     });
