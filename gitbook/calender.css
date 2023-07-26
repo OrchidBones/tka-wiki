@@ -5,16 +5,16 @@
 }
 
 span.today-highlight{
-    text-decoration: underline 3px rgb(32, 184, 255);
+    border-bottom: solid 3px rgb(32, 184, 255);
     margin-right: 3px;
 }
 
 span.birthday-highlight{
-    text-decoration: underline 3px rgb(255, 193, 68);
+    border-bottom: solid 3px rgb(255, 193, 68);
     margin-right: 3px;
 }
 
 .zabuto-calendar__day--today .birthday-highlight{
-    text-decoration: underline 3px rgb(0, 222, 107);
+    border-bottom: solid 3px rgb(0, 222, 107);
     margin-right: 3px;
 }
